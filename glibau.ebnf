@@ -41,11 +41,11 @@ clause1 = pluralclause | singularclause;
 
 
 
-singularclause = ([singularnoun1], " ", singulardependentclause | singularnoun1, " ", singularlinkingverb0, [" ", adverb1]);
+singularclause = ([singularnoun1], " ", singulardependentclause | singularnoun1, " ", singularlinkingverb0, [" ", adverb1], [" ", adjective1]);
 
 
 
-pluralclause = ([pluralnoun1, " "], pluraldependentclause | pluralnoun0, " ", plurallinkingverb0, [" ", adverb1]);
+pluralclause = ([pluralnoun1, " "], pluraldependentclause | pluralnoun0, " ", plurallinkingverb0, [" ", adverb1], [" ", adjective1]);
 
 
 
