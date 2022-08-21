@@ -2,7 +2,7 @@ text = {sentence, SPACE, {ENDPUNCT}};
 
 
 
-sentence = compoundsentence | conditional;
+sentence = [[introductory, SPACE], [{quantifier, SPACE}], (compoundsentence | conditional);
 
 
 
@@ -17,7 +17,7 @@ conditional4 = noncompoundsentence | "(", compoundsentence, ")" | noncompoundsen
 
 
 
-compoundsentence = [introductory, SPACE], [{quantifier, SPACE}], [noncompoundsentence, SPACE, SUCHTHAT, SPACE], compoundsentence1;
+compoundsentence = [noncompoundsentence, SPACE, SUCHTHAT, SPACE], compoundsentence1;
 
 compoundsentence1 = noncompoundsentence, [{(",", SPACE, CONJUNCTION | ";"), SPACE, compoundsentence}];
 
