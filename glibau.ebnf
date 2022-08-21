@@ -1,0 +1,158 @@
+text = {sentence, " ", {ENDPUNCT}};
+
+
+
+sentence = compoundsentence | conditional;
+
+
+
+conditional = conditional1 | conditional2;
+
+conditional1 = conditional3, " ", LOGICONJUNCTION , " ", conditional3;
+
+conditional2 = LOGICONJUNCTION, " ", conditional3, " ", THEN, conditional3;
+
+conditional3 = noncompoundsentence | "(", compoundsentence, ")";
+
+
+
+compoundsentence = [introductory, " "], [{quantifier, " "}], [noncompoundsentence, " ", SUCHTHAT, " "], compoundsentence1;
+
+compoundsentence1 = noncompoundsentence, [{" ", (",", CONJUNCTION | ";"), " ", compoundsentence}];
+
+
+
+quantifier = PUQUANTIFIER, " ", gnoun1, " ", VARIABLE, " ", COMMA;
+
+
+
+introductory = [namelist, ":", " "] [introporw...];
+
+
+
+noncompoundsentence = noncompoundsentence1 | singularclause | pluralclause | INTERJECTION;
+
+
+
+singularclause = ([singularnoun1], " ", singulardependentclause | singularnoun1, " ", singularlinkingverb0, [" ", adverb1]);
+
+pluralclause = ([pluralnoun1, " "], pluraldependentclause | pluralnoun0, " ", plurallinkingverb0, [" ", adverb1]);
+
+
+
+gnoun1 = gnoun2 | "(", gnoun2, ")";
+
+gnoun2 = gnoun3, [" ", CONJUNCTION, [" ", {gnoun2, ", "}], CONJUNCTION, " ", gnoun3];
+
+gnoun3 = pluralnoun1, [" ", VARIABLE] | singularnoun1, [" ", VARIABLE];
+
+
+
+singularverb1 = singularverb2 | "(", singularverb2, ")";
+
+singularverb2 = singularverb3, " ", CONJUNCTION, " ", singularverb3 | [singularverb3, ", ", {singularverb3, ", "}, CONJUNCTION, " ",], singularverb3;
+
+singularverb3 = singularverb4 | "(", singularverb4, ")";
+
+singularverb4 = [adverb, " ",], (SVERB | SLINKVERB), [" ", adverb];
+
+
+
+pluralverb1 = pluralverb2 | "(", pluralverb2, ")";
+
+pluralverb2 = pluralverb3, " ", CONJUNCTION, " ", pluralverb3 | [pluralverb3, ", ", {pluralverb3, ", "}, CONJUNCTION, " ",], pluralverb3;
+
+pluralverb3 = pluralverb4 | "(", pluralverb4, ")";
+
+pluralverb4 = [adverb, " "], (PVERB | PLINKVERB) [" ", adverb];
+
+
+
+plurallinkingverb0 = PLURALLINKINGVERB, [" ", adverb];
+
+
+
+singularlinkingverb0 = SINGULARLINKINGVERB, [" ", adverb];
+
+
+
+singularnoun1 = singularnoun1 [[", ", {singularnoun1, ", "}, " ",], CONJUNCTION, " ", singularnoun1];
+
+singularnoun2 = singularnoun3 | "(", singularnoun3, ")";
+
+singularnoun3 = singularnoun4 | "(", singularnoun4, ")", [" ", (singularrelativeclause | prepositionalphrase)];
+
+singularnoun4 = (clause | singularnoun5), [" ", (singularrelativeclause | prepositionalphrase)];
+
+singularnoun5 = ARTICLE, " ", adjective1 | [ARTICLE, " "] [adjective1, " "] (SNOUN | NAME);
+
+
+
+pluralnoun0 = pluralnoun1, [[", ", {pluralnoun1, ", "}, " ",], CONJUNCTION, " ", pluralnoun1];
+
+pluralnoun1 = pluralnoun2 | "(", pluralnoun2, ")";
+
+pluralnoun2 = (pluralnoun3 | "(", pluralnoun3, ")"), [" ", (pluralrelativeclause | prepositionalphrase)];
+
+pluralnoun3 = (clause | pluralnoun4), [" ", (pluralrelativeclause | prepositionalphrase)];
+
+pluralnoun4 = ARTICLE, " ", adjective1 | [ARTICLE, " "] [adjective1, " "], PNOUN;
+
+
+
+pluraldependentclause = pluraldependentclause1 [[", ", {pluraldependentclause1, ", "}, " ",], CONJUNCTION, " ", pluraldependentclause1];
+
+pluraldependentclause1 = pluralverb1, [" ", gnoun1];
+
+
+
+pluralrelativeclause = pluralrelativeclause1 | ",", pluralrelativeclause1, ",";
+
+pluralrelativeclause1 = RELCLAUSEOPENER, " ", pluraldependentclause;
+
+
+
+singularrelativeclause = singularrelativeclause1 | ",", singularrelativeclause1, ",";
+
+
+
+singulardependentclause = singulardependentclause1 [[", ", {singulardependentclause1, ", "}, " ",], CONJUNCTION, " ", singulardependentclause1];
+
+
+singulardependentclause1 = singularverb1, [" ", gnoun1];
+
+
+
+gerund = GERUNDWORD, [" ", gnoun1];
+
+
+
+prepositionalphrase = PREPOSITION, " ", gnoun1, [" ", CONJUNCTION, " ", prepositionalphrase];
+
+
+
+introporw = (INTERJECTION | prepositionalphrase | gerund), ",";
+
+
+
+clause = CLAUSEOPENER, " ", sentence | "(", sentence, ")";
+
+
+
+adjective1 = adjective2 | "(", adjective2, ")";
+
+adjective2 = adjective3 | adjective2, ", ", [{adjective2, ", "}] CONJUNCTION, " ", adjective2;
+
+adjective3 = adjective4 | "(", adjective4, ")";
+
+adjective4 = [adverb, " "], ADJECTIVE;
+
+
+
+adverb1 = adverb2 | "(", adverb2, ")";
+
+adverb3 = adverb3, " ", prepositionalphrase | (adverb3 | prepositionalphrase);
+
+adverb4 = adverb4, [[",", {" ", adverb4, ","},], " ", CONJUNCTION, " ", adverb4];
+
+adverb4 = ADVERB | adverb1;
