@@ -147,7 +147,7 @@ adjective2 = adjective3 | adjective2, [", ", {adjective2, ", "}] CONJUNCTION, " 
 
 adjective3 = adjective4 | "(", adjective4, ")";
 
-adjective4 = [adverb, " "], (ADJECTIVE | {digit});
+adjective4 = gnoun1 | [adverb, " "], (ADJECTIVE | {digit});
 
 
 
