@@ -77,11 +77,11 @@ pluralverb4 = [adverb, " "], (PVERB | PLINKVERB) [" ", adverb];
 
 
 
-plurallinkingverb0 = PLURALLINKINGVERB, [" ", adverb];
+plurallinkingverb0 = PLINKVERB, [" ", adverb];
 
 
 
-singularlinkingverb0 = SINGULARLINKINGVERB, [" ", adverb];
+singularlinkingverb0 = SLINKVERB, [" ", adverb];
 
 
 
