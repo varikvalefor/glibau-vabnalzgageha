@@ -1,4 +1,4 @@
-text = {supersentence, SPACE, {ENDPUNCT}};
+text = {supersentence, INTERSENTENCESPACE, {ENDPUNCT}};
 
 
 
