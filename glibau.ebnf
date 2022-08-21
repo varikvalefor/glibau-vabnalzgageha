@@ -41,7 +41,7 @@ clause1 = pluralclause | singularclause;
 
 
 
-singularclause = ([singularnoun1], " ", singulardependentclause | singularnoun1, " ", singularlinkingverb0, [" ", adverb], [" ", adjective]);
+singularclause = ([singularnoun], " ", singulardependentclause | singularnoun, " ", singularlinkingverb0, [" ", adverb], [" ", adjective]);
 
 
 
@@ -53,7 +53,7 @@ gnoun = gnoun1 | "(", gnoun1, ")";
 
 gnoun1 = gnoun2, [" ", CONJUNCTION, [" ", {gnoun1, ", "}], CONJUNCTION, " ", gnoun2];
 
-gnoun2 = pluralnoun1, [" ", VARIABLE] | singularnoun1, [" ", VARIABLE];
+gnoun2 = pluralnoun1, [" ", VARIABLE] | singularnoun, [" ", VARIABLE];
 
 
 
@@ -85,15 +85,15 @@ singularlinkingverb0 = SLINKVERB, [" ", adverb];
 
 
 
-singularnoun1 = singularnoun1 [[", ", {singularnoun1, ", "}, " ",], CONJUNCTION, " ", singularnoun1];
+singularnoun = singularnoun [[", ", {singularnoun, ", "}, " ",], CONJUNCTION, " ", singularnoun];
 
-singularnoun2 = singularnoun3 | "(", singularnoun3, ")";
+singularnoun1 = singularnoun2 | "(", singularnoun2, ")";
 
-singularnoun3 = singularnoun4 | "(", singularnoun4, ")", [" ", (singularrelativeclause | prepositionalphrase)];
+singularnoun2 = singularnoun3 | "(", singularnoun3, ")", [" ", (singularrelativeclause | prepositionalphrase)];
 
-singularnoun4 = (clause | singularnoun5), " ", [" ", (singularrelativeclause | prepositionalphrase)];
+singularnoun3 = (clause | singularnoun4), " ", [" ", (singularrelativeclause | prepositionalphrase)];
 
-singularnoun5 = ARTICLE, " ", adjective | [ARTICLE, " "] [adjective, " "] (SQUOTE | SNOUN | NAME | {digit});
+singularnoun4 = ARTICLE, " ", adjective | [ARTICLE, " "] [adjective, " "] (SQUOTE | SNOUN | NAME | {digit});
 
 
 
