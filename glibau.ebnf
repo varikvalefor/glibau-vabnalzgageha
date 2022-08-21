@@ -67,13 +67,13 @@ singularverb4 = [adverb, " ",], (SVERB | SLINKVERB), [" ", adverb];
 
 
 
-pluralverb1 = pluralverb2 | "(", pluralverb2, ")";
+pluralverb = pluralverb1 | "(", pluralverb1, ")";
 
-pluralverb2 = pluralverb3, " ", CONJUNCTION, " ", pluralverb3 | [pluralverb3, ", ", {pluralverb3, ", "}, CONJUNCTION, " ",], pluralverb3;
+pluralverb1 = pluralverb2, " ", CONJUNCTION, " ", pluralverb2 | [pluralverb2, ", ", {pluralverb2, ", "}, CONJUNCTION, " ",], pluralverb2;
 
-pluralverb3 = pluralverb4 | "(", pluralverb4, ")";
+pluralverb2 = pluralverb3 | "(", pluralverb3, ")";
 
-pluralverb4 = [adverb, " "], (PVERB | PLINKVERB) [" ", adverb];
+pluralverb3 = [adverb, " "], (PVERB | PLINKVERB) [" ", adverb];
 
 
 
@@ -111,7 +111,7 @@ pluralnoun4 = ARTICLE, " ", adjective | [ARTICLE, " "] [adjective, " "], (PQUOTE
 
 pluraldependentclause = pluraldependentclause1 [[", ", {pluraldependentclause1, ", "}, " ",], CONJUNCTION, " ", pluraldependentclause1];
 
-pluraldependentclause1 = pluralverb1, [" ", gnoun];
+pluraldependentclause1 = pluralverb, [" ", gnoun];
 
 
 
