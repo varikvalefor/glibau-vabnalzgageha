@@ -6,13 +6,14 @@ sentence = compoundsentence | conditional;
 
 
 
-conditional = conditional1 | conditional2;
+conditional = conditional1 | "(", conditional1, ")";
+conditional1 = conditional2 | conditional3;
 
-conditional1 = conditional3, " ", LOGICONJUNCTION , " ", conditional3;
+conditional2 = conditional4, " ", LOGICONJUNCTION , " ", conditional4;
 
-conditional2 = LOGICONJUNCTION, " ", conditional3, ", ", THEN, conditional3;
+conditional3 = LOGICONJUNCTION, " ", conditional4, ", ", THEN, conditional4;
 
-conditional3 = noncompoundsentence | "(", compoundsentence, ")";
+conditional4 = noncompoundsentence | "(", compoundsentence, ")" | noncompoundsentence [" ", CONJUNCTION, conditional4];
 
 
 
