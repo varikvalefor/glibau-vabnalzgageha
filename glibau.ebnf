@@ -1,8 +1,8 @@
-text = [{supersentence, {ENDPUNCT}, INTERSENTENCESPACE}] supersentence, {ENDPUNCT};
+text = [{supersentence, INTERSENTENCESPACE}] supersentence;
 
 
 
-supersentence = [[introductory, SPACE], [{quantifier, SPACE}], (compoundsentence | conditional);
+supersentence = [[introductory, SPACE], [{quantifier, SPACE}], (compoundsentence | conditional), {ENDPUNCT};
 
 
 
