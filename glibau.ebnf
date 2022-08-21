@@ -57,13 +57,13 @@ gnoun2 = pluralnoun1, [" ", VARIABLE] | singularnoun, [" ", VARIABLE];
 
 
 
-singularverb1 = singularverb2 | "(", singularverb2, ")";
+singularverb = singularverb1 | "(", singularverb1, ")";
 
-singularverb2 = singularverb3, " ", CONJUNCTION, " ", singularverb3 | [singularverb3, ", ", {singularverb3, ", "}, CONJUNCTION, " ",], singularverb3;
+singularverb1 = singularverb2, " ", CONJUNCTION, " ", singularverb2 | [singularverb2, ", ", {singularverb2, ", "}, CONJUNCTION, " ",], singularverb2;
 
-singularverb3 = singularverb4 | "(", singularverb4, ")";
+singularverb2 = singularverb3 | "(", singularverb3, ")";
 
-singularverb4 = [adverb, " ",], (SVERB | SLINKVERB), [" ", adverb];
+singularverb3 = [adverb, " ",], (SVERB | SLINKVERB), [" ", adverb];
 
 
 
@@ -117,7 +117,7 @@ pluraldependentclause1 = pluralverb, [" ", gnoun];
 
 singulardependentclause = singulardependentclause1 [[", ", {singulardependentclause1, ", "}, " ",], CONJUNCTION, " ", singulardependentclause1];
 
-singulardependentclause1 = singularverb1, [" ", gnoun];
+singulardependentclause1 = singularverb, [" ", gnoun];
 
 
 
