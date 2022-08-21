@@ -23,7 +23,7 @@ compoundsentence1 = noncompoundsentence, [{" ", (",", CONJUNCTION | ";"), " ", c
 
 
 
-quantifier = PUQUANTIFIER, " ", gnoun1, [" ", VARIABLE,] ",";
+quantifier = PUQUANTIFIER, " ", gnoun, [" ", VARIABLE,] ",";
 
 
 
@@ -49,11 +49,11 @@ pluralclause = ([pluralnoun1, " "], pluraldependentclause | pluralnoun, " ", plu
 
 
 
-gnoun1 = gnoun2 | "(", gnoun2, ")";
+gnoun = gnoun1 | "(", gnoun1, ")";
 
-gnoun2 = gnoun3, [" ", CONJUNCTION, [" ", {gnoun2, ", "}], CONJUNCTION, " ", gnoun3];
+gnoun1 = gnoun2, [" ", CONJUNCTION, [" ", {gnoun1, ", "}], CONJUNCTION, " ", gnoun2];
 
-gnoun3 = pluralnoun1, [" ", VARIABLE] | singularnoun1, [" ", VARIABLE];
+gnoun2 = pluralnoun1, [" ", VARIABLE] | singularnoun1, [" ", VARIABLE];
 
 
 
@@ -111,13 +111,13 @@ pluralnoun4 = ARTICLE, " ", adjective | [ARTICLE, " "] [adjective, " "], (PQUOTE
 
 pluraldependentclause = pluraldependentclause1 [[", ", {pluraldependentclause1, ", "}, " ",], CONJUNCTION, " ", pluraldependentclause1];
 
-pluraldependentclause1 = pluralverb1, [" ", gnoun1];
+pluraldependentclause1 = pluralverb1, [" ", gnoun];
 
 
 
 singulardependentclause = singulardependentclause1 [[", ", {singulardependentclause1, ", "}, " ",], CONJUNCTION, " ", singulardependentclause1];
 
-singulardependentclause1 = singularverb1, [" ", gnoun1];
+singulardependentclause1 = singularverb1, [" ", gnoun];
 
 
 
@@ -133,11 +133,11 @@ singularrelativeclause1 = RELCLAUSEOPENER, " ", singulardependentclause;
 
 
 
-gerund = GERUNDWORD, [" ", gnoun1];
+gerund = GERUNDWORD, [" ", gnoun];
 
 
 
-prepositionalphrase = PREPOSITION, " ", gnoun1, [" ", CONJUNCTION, " ", prepositionalphrase];
+prepositionalphrase = PREPOSITION, " ", gnoun, [" ", CONJUNCTION, " ", prepositionalphrase];
 
 
 
@@ -155,7 +155,7 @@ adjective1 = adjective2 | adjective1, [", ", {adjective1, ", "}] CONJUNCTION, " 
 
 adjective2 = adjective3 | "(", adjective3, ")";
 
-adjective3 = gnoun1 | [adverb, " "], (ADJECTIVE | {digit});
+adjective3 = gnoun | [adverb, " "], (ADJECTIVE | {digit});
 
 
 
