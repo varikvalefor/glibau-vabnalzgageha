@@ -10,7 +10,7 @@ conditional = conditional1 | conditional2;
 
 conditional1 = conditional3, " ", LOGICONJUNCTION , " ", conditional3;
 
-conditional2 = LOGICONJUNCTION, " ", conditional3, " ", THEN, conditional3;
+conditional2 = LOGICONJUNCTION, " ", conditional3, ", ", THEN, conditional3;
 
 conditional3 = noncompoundsentence | "(", compoundsentence, ")";
 
