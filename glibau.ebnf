@@ -141,7 +141,7 @@ clause = CLAUSEOPENER, " ", sentence | "(", sentence, ")";
 
 adjective1 = adjective2 | "(", adjective2, ")";
 
-adjective2 = adjective3 | adjective2, ", ", [{adjective2, ", "}] CONJUNCTION, " ", adjective2;
+adjective2 = adjective3 | adjective2, [", ", {adjective2, ", "}] CONJUNCTION, " ", adjective2;
 
 adjective3 = adjective4 | "(", adjective4, ")";
 
