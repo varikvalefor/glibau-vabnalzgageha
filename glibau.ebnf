@@ -114,6 +114,8 @@ pluralrelativeclause1 = RELCLAUSEOPENER, " ", pluraldependentclause;
 
 singularrelativeclause = singularrelativeclause1 | ",", singularrelativeclause1, ",";
 
+singularrelativeclause1 = RELCLAUSEOPENER, " ", singulardependentclause;
+
 
 
 singulardependentclause = singulardependentclause1 [[", ", {singulardependentclause1, ", "}, " ",], CONJUNCTION, " ", singulardependentclause1];
