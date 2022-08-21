@@ -45,7 +45,7 @@ singularclause = ([singularnoun1], " ", singulardependentclause | singularnoun1,
 
 
 
-pluralclause = ([pluralnoun1, " "], pluraldependentclause | pluralnoun0, " ", plurallinkingverb0, [" ", adverb], [" ", adjective]);
+pluralclause = ([pluralnoun1, " "], pluraldependentclause | pluralnoun, " ", plurallinkingverb0, [" ", adverb], [" ", adjective]);
 
 
 
@@ -97,7 +97,7 @@ singularnoun5 = ARTICLE, " ", adjective | [ARTICLE, " "] [adjective, " "] (SQUOT
 
 
 
-pluralnoun0 = pluralnoun1, [[", ", {pluralnoun1, ", "}, " ",], CONJUNCTION, " ", pluralnoun1];
+pluralnoun = pluralnoun1, [[", ", {pluralnoun1, ", "}, " ",], CONJUNCTION, " ", pluralnoun1];
 
 pluralnoun1 = pluralnoun2 | "(", pluralnoun2, ")";
 
