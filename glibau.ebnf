@@ -82,9 +82,9 @@ singularnoun2 = singularnoun3 | "(", singularnoun3, ")";
 
 singularnoun3 = singularnoun4 | "(", singularnoun4, ")", [" ", (singularrelativeclause | prepositionalphrase)];
 
-singularnoun4 = (clause | singularnoun5), [" ", (singularrelativeclause | prepositionalphrase)];
+singularnoun4 = (clause | singularnoun5), " ", [" ", (singularrelativeclause | prepositionalphrase)];
 
-singularnoun5 = ARTICLE, " ", adjective1 | [ARTICLE, " "] [adjective1, " "] (SNOUN | NAME);
+singularnoun5 = ARTICLE, " ", adjective1 | [ARTICLE, " "] [adjective1, " "] (SNOUN | NAME | {digit});
 
 
 
@@ -94,9 +94,9 @@ pluralnoun1 = pluralnoun2 | "(", pluralnoun2, ")";
 
 pluralnoun2 = (pluralnoun3 | "(", pluralnoun3, ")"), [" ", (pluralrelativeclause | prepositionalphrase)];
 
-pluralnoun3 = (clause | pluralnoun4), [" ", (pluralrelativeclause | prepositionalphrase)];
+pluralnoun3 = [{digit}, " "], (clause | pluralnoun4), [" ", (pluralrelativeclause | prepositionalphrase)];
 
-pluralnoun4 = ARTICLE, " ", adjective1 | [ARTICLE, " "] [adjective1, " "], PNOUN;
+pluralnoun4 = ARTICLE, " ", adjective1 | [ARTICLE, " "] [adjective1, " "], (PNOUN | {digit});
 
 
 
@@ -145,7 +145,7 @@ adjective2 = adjective3 | adjective2, ", ", [{adjective2, ", "}] CONJUNCTION, " 
 
 adjective3 = adjective4 | "(", adjective4, ")";
 
-adjective4 = [adverb, " "], ADJECTIVE;
+adjective4 = [adverb, " "], (ADJECTIVE | {digit});
 
 
 
@@ -156,3 +156,13 @@ adverb3 = adverb3, " ", prepositionalphrase | (adverb3 | prepositionalphrase);
 adverb4 = adverb4, [[",", {" ", adverb4, ","},], " ", CONJUNCTION, " ", adverb4];
 
 adverb4 = ADVERB | adverb1;
+
+
+
+
+
+
+
+
+
+digit = "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9";
