@@ -115,7 +115,7 @@ pluraldependentclause1 = pluralverb, [" ", gnoun];
 
 
 
-singulardependentclause = singulardependentclause1 [[", ", {singulardependentclause1, ", "}, " ",], CONJUNCTION, " ", singulardependentclause1];
+singulardependentclause = singulardependentclause1 [[", ", {singulardependentclause1, ", "}], " ", CONJUNCTION, " ", singulardependentclause1];
 
 singulardependentclause1 = singularverb, [" ", gnoun];
 
