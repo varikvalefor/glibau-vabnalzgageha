@@ -115,6 +115,12 @@ pluraldependentclause1 = pluralverb1, [" ", gnoun1];
 
 
 
+singulardependentclause = singulardependentclause1 [[", ", {singulardependentclause1, ", "}, " ",], CONJUNCTION, " ", singulardependentclause1];
+
+singulardependentclause1 = singularverb1, [" ", gnoun1];
+
+
+
 pluralrelativeclause = pluralrelativeclause1 | ",", pluralrelativeclause1, ",";
 
 pluralrelativeclause1 = RELCLAUSEOPENER, " ", pluraldependentclause;
@@ -124,13 +130,6 @@ pluralrelativeclause1 = RELCLAUSEOPENER, " ", pluraldependentclause;
 singularrelativeclause = singularrelativeclause1 | ",", singularrelativeclause1, ",";
 
 singularrelativeclause1 = RELCLAUSEOPENER, " ", singulardependentclause;
-
-
-
-singulardependentclause = singulardependentclause1 [[", ", {singulardependentclause1, ", "}, " ",], CONJUNCTION, " ", singulardependentclause1];
-
-
-singulardependentclause1 = singularverb1, [" ", gnoun1];
 
 
 
