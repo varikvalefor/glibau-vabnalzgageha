@@ -30,7 +30,9 @@ introductory = [namelist, ":", " "] [{introporw}];
 
 
 
-noncompoundsentence = noncompoundsentence1 | singularclause | pluralclause | INTERJECTION;
+noncompoundsentence = noncompoundsentence1 | "(", noncompoundsentence1, ")";
+
+noncompoundsentence1 = singularclause | pluralclause | INTERJECTION;
 
 
 
