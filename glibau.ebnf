@@ -23,7 +23,7 @@ compoundsentence1 = noncompoundsentence, [{" ", (",", CONJUNCTION | ";"), " ", c
 
 
 
-quantifier = PUQUANTIFIER, " ", gnoun1, " ", VARIABLE, ",";
+quantifier = PUQUANTIFIER, " ", gnoun1, [" ", VARIABLE,] ",";
 
 
 
