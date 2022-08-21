@@ -84,7 +84,7 @@ singularnoun3 = singularnoun4 | "(", singularnoun4, ")", [" ", (singularrelative
 
 singularnoun4 = (clause | singularnoun5), " ", [" ", (singularrelativeclause | prepositionalphrase)];
 
-singularnoun5 = ARTICLE, " ", adjective1 | [ARTICLE, " "] [adjective1, " "] (SNOUN | NAME | {digit});
+singularnoun5 = ARTICLE, " ", adjective1 | [ARTICLE, " "] [adjective1, " "] (SQUOTE | SNOUN | NAME | {digit});
 
 
 
@@ -96,7 +96,7 @@ pluralnoun2 = (pluralnoun3 | "(", pluralnoun3, ")"), [" ", (pluralrelativeclause
 
 pluralnoun3 = [{digit}, " "], (clause | pluralnoun4), [" ", (pluralrelativeclause | prepositionalphrase)];
 
-pluralnoun4 = ARTICLE, " ", adjective1 | [ARTICLE, " "] [adjective1, " "], (PNOUN | {digit});
+pluralnoun4 = ARTICLE, " ", adjective1 | [ARTICLE, " "] [adjective1, " "], (PQUOTE | PNOUN | {digit});
 
 
 
