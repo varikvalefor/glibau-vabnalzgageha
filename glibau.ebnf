@@ -1,8 +1,8 @@
-text = {sentence, SPACE, {ENDPUNCT}};
+text = {supersentence, SPACE, {ENDPUNCT}};
 
 
 
-sentence = [[introductory, SPACE], [{quantifier, SPACE}], (compoundsentence | conditional);
+supersentence = [[introductory, SPACE], [{quantifier, SPACE}], (compoundsentence | conditional);
 
 
 
@@ -145,7 +145,7 @@ introporw = (INTERJECTION | prepositionalphrase | gerund), ",";
 
 
 
-clause = CLAUSEOPENER, SPACE, sentence | "(", sentence, ")";
+clause = CLAUSEOPENER, SPACE, supersentence | "(", supersentence, ")";
 
 
 
