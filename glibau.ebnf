@@ -23,7 +23,7 @@ compoundsentence1 = noncompoundsentence, [{" ", (",", CONJUNCTION | ";"), " ", c
 
 
 
-quantifier = PUQUANTIFIER, " ", gnoun, [" ", VARIABLE,] ",";
+quantifier = PUQUANTIFIER, " ", gnoun, [" ", VARIABLE] ",";
 
 
 
@@ -59,17 +59,17 @@ gnoun2 = pluralnoun1, [" ", VARIABLE] | singularnoun, [" ", VARIABLE];
 
 singularverb = singularverb1 | "(", singularverb1, ")";
 
-singularverb1 = singularverb2, " ", CONJUNCTION, " ", singularverb2 | [singularverb2, ", ", {singularverb2, ", "}, CONJUNCTION, " ",], singularverb2;
+singularverb1 = singularverb2, " ", CONJUNCTION, " ", singularverb2 | [singularverb2, ", ", {singularverb2, ", "}, CONJUNCTION, " "], singularverb2;
 
 singularverb2 = singularverb3 | "(", singularverb3, ")";
 
-singularverb3 = [adverb, " ",], (SVERB | SLINKVERB), [" ", adverb];
+singularverb3 = [adverb, " "], (SVERB | SLINKVERB), [" ", adverb];
 
 
 
 pluralverb = pluralverb1 | "(", pluralverb1, ")";
 
-pluralverb1 = pluralverb2, " ", CONJUNCTION, " ", pluralverb2 | [pluralverb2, ", ", {pluralverb2, ", "}, CONJUNCTION, " ",], pluralverb2;
+pluralverb1 = pluralverb2, " ", CONJUNCTION, " ", pluralverb2 | [pluralverb2, ", ", {pluralverb2, ", "}, CONJUNCTION, " "], pluralverb2;
 
 pluralverb2 = pluralverb3 | "(", pluralverb3, ")";
 
@@ -85,7 +85,7 @@ singularlinkingverb0 = SLINKVERB, [" ", adverb];
 
 
 
-singularnoun = singularnoun [[", ", {singularnoun, ", "}, " ",], CONJUNCTION, " ", singularnoun];
+singularnoun = singularnoun [[", ", {singularnoun, ", "}, " "], CONJUNCTION, " ", singularnoun];
 
 singularnoun1 = singularnoun2 | "(", singularnoun2, ")";
 
@@ -97,7 +97,7 @@ singularnoun4 = ARTICLE, " ", adjective | [ARTICLE, " "] [adjective, " "] (SQUOT
 
 
 
-pluralnoun = pluralnoun1, [[", ", {pluralnoun1, ", "}, " ",], CONJUNCTION, " ", pluralnoun1];
+pluralnoun = pluralnoun1, [[", ", {pluralnoun1, ", "}, " "], CONJUNCTION, " ", pluralnoun1];
 
 pluralnoun1 = pluralnoun2 | "(", pluralnoun2, ")";
 
@@ -109,7 +109,7 @@ pluralnoun4 = ARTICLE, " ", adjective | [ARTICLE, " "] [adjective, " "], (PQUOTE
 
 
 
-pluraldependentclause = pluraldependentclause1 [[", ", {pluraldependentclause1, ", "}, " ",], CONJUNCTION, " ", pluraldependentclause1];
+pluraldependentclause = pluraldependentclause1 [[", ", {pluraldependentclause1, ", "}, " "], CONJUNCTION, " ", pluraldependentclause1];
 
 pluraldependentclause1 = pluralverb, [" ", gnoun];
 
@@ -163,7 +163,7 @@ adverb = adverb1 | "(", adverb1, ")";
 
 adverb2 = adverb2, " ", prepositionalphrase | (adverb2 | prepositionalphrase);
 
-adverb3 = adverb3, [[",", {" ", adverb3, ","},], " ", CONJUNCTION, " ", adverb3];
+adverb3 = adverb3, [[",", {" ", adverb3, ","}], " ", CONJUNCTION, " ", adverb3];
 
 adverb3 = ADVERB | adverb;
 
