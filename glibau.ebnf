@@ -2,7 +2,7 @@ text = [{supersentence, INTERSENTENCESPACE}] supersentence;
 
 
 
-supersentence = [[introductory, SPACE], [{quantifier, SPACE}], (compoundsentence | conditional), {ENDPUNCT};
+supersentence = [introductory, SPACE], [{quantifier, SPACE}], (compoundsentence | conditional), {ENDPUNCT};
 
 
 
