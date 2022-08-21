@@ -41,11 +41,11 @@ clause1 = pluralclause | singularclause;
 
 
 
-singularclause = ([singularnoun1], " ", singulardependentclause | singularnoun1, " ", singularlinkingverb0, [" ", adverb], [" ", adjective1]);
+singularclause = ([singularnoun1], " ", singulardependentclause | singularnoun1, " ", singularlinkingverb0, [" ", adverb], [" ", adjective]);
 
 
 
-pluralclause = ([pluralnoun1, " "], pluraldependentclause | pluralnoun0, " ", plurallinkingverb0, [" ", adverb], [" ", adjective1]);
+pluralclause = ([pluralnoun1, " "], pluraldependentclause | pluralnoun0, " ", plurallinkingverb0, [" ", adverb], [" ", adjective]);
 
 
 
@@ -93,7 +93,7 @@ singularnoun3 = singularnoun4 | "(", singularnoun4, ")", [" ", (singularrelative
 
 singularnoun4 = (clause | singularnoun5), " ", [" ", (singularrelativeclause | prepositionalphrase)];
 
-singularnoun5 = ARTICLE, " ", adjective1 | [ARTICLE, " "] [adjective1, " "] (SQUOTE | SNOUN | NAME | {digit});
+singularnoun5 = ARTICLE, " ", adjective | [ARTICLE, " "] [adjective, " "] (SQUOTE | SNOUN | NAME | {digit});
 
 
 
@@ -105,7 +105,7 @@ pluralnoun2 = (pluralnoun3 | "(", pluralnoun3, ")"), [" ", (pluralrelativeclause
 
 pluralnoun3 = [{digit}, " "], (clause | pluralnoun4), [" ", (pluralrelativeclause | prepositionalphrase)];
 
-pluralnoun4 = ARTICLE, " ", adjective1 | [ARTICLE, " "] [adjective1, " "], (PQUOTE | PNOUN | {digit});
+pluralnoun4 = ARTICLE, " ", adjective | [ARTICLE, " "] [adjective, " "], (PQUOTE | PNOUN | {digit});
 
 
 
@@ -149,13 +149,13 @@ clause = CLAUSEOPENER, " ", sentence | "(", sentence, ")";
 
 
 
-adjective1 = adjective2 | "(", adjective2, ")";
+adjective = adjective1 | "(", adjective1, ")";
 
-adjective2 = adjective3 | adjective2, [", ", {adjective2, ", "}] CONJUNCTION, " ", adjective2;
+adjective1 = adjective2 | adjective1, [", ", {adjective1, ", "}] CONJUNCTION, " ", adjective1;
 
-adjective3 = adjective4 | "(", adjective4, ")";
+adjective2 = adjective3 | "(", adjective3, ")";
 
-adjective4 = gnoun1 | [adverb, " "], (ADJECTIVE | {digit});
+adjective3 = gnoun1 | [adverb, " "], (ADJECTIVE | {digit});
 
 
 
