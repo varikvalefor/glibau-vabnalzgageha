@@ -18,7 +18,7 @@ conditional4 = noncompoundsentence | "(", compoundsentence, ")" | noncompoundsen
 
 
 
-compoundsentence = [noncompoundsentence, SPACE, SUCHTHAT, SPACE], compoundsentence1;
+compoundsentence = [noncompoundsentence, SPACE, SUCHTHAT, SPACE], compoundsentence;
 
 compoundsentence1 = noncompoundsentence, [{(",", SPACE, CONJUNCTION | ";"), SPACE, compoundsentence}];
 
