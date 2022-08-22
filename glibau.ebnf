@@ -7,6 +7,7 @@ supersentence = [introductory, SPACE], [{quantifier, SPACE}], (compoundsentence 
 
 
 conditional = conditional1 | "(", conditional1, ")";
+
 conditional1 = conditional2 | conditional3;
 
 conditional2 = conditional4, SPACE, LOGICONJUNCTION , SPACE, conditional4;
