@@ -59,7 +59,7 @@ gnoun2 = pluralnoun1, [SPACE, VARIABLE] | singularnoun, [SPACE, VARIABLE];
 
 singularverb = singularverb1 | "(", singularverb1, ")";
 
-singularverb1 = singularverb2, SPACE, CONJUNCTION, SPACE, singularverb2 | [singularverb2, ", ", {singularverb2, ", "}, CONJUNCTION, SPACE], singularverb2;
+singularverb1 = SHELPVERB, SPACE, pluralverb | singularverb2, SPACE, CONJUNCTION, SPACE, singularverb2 | [singularverb2, ", ", {singularverb2, ", "}, CONJUNCTION, SPACE], singularverb2;
 
 singularverb2 = singularverb3 | "(", singularverb3, ")";
 
@@ -69,7 +69,7 @@ singularverb3 = [adverb, SPACE], (SVERB | SLINKVERB), [SPACE, adverb];
 
 pluralverb = pluralverb1 | "(", pluralverb1, ")";
 
-pluralverb1 = pluralverb2, SPACE, CONJUNCTION, SPACE, pluralverb2 | [pluralverb2, ", ", {pluralverb2, ", "}, CONJUNCTION, SPACE], pluralverb2;
+pluralverb1 = PHELPVERB, SPACE, pluralverb | pluralverb2, SPACE, CONJUNCTION, SPACE, pluralverb2 | [pluralverb2, ", ", {pluralverb2, ", "}, CONJUNCTION, SPACE], pluralverb2;
 
 pluralverb2 = pluralverb3 | "(", pluralverb3, ")";
 
