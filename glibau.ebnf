@@ -2,7 +2,7 @@ text = [{supersentence, {ENDPUNCT}, INTERSENTENCESPACE}] supersentence, {ENDPUNC
 
 
 
-supersentence = [introductory, SPACE], [{quantifier, SPACE}], (compoundsentence | conditional);
+supersentence = [introductory], [{quantifier, SPACE}], (compoundsentence | conditional);
 
 
 
@@ -28,7 +28,7 @@ quantifier = PUQUANTIFIER, SPACE, gnoun, [SPACE, VARIABLE] ",";
 
 
 
-introductory = [namelist, ":", SPACE] [{introporw}];
+introductory = [namelist, ":", SPACE], [CONJUNCTION, SPACE], [{introporw}, SPACE];
 
 
 
