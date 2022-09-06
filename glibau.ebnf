@@ -1,4 +1,4 @@
-text = [{supersentence, {ENDPUNCT}, INTERSENTENCESPACE}] supersentence, {ENDPUNCT};
+text = [{supersentence, {endpunct}, INTERSENTENCESPACE}] supersentence, {endpunct};
 
 
 
@@ -167,6 +167,10 @@ adverb2 = adverb2, SPACE, prepositionalphrase | (adverb2 | prepositionalphrase);
 adverb3 = adverb3, [[",", {SPACE, adverb3, ","}], SPACE, CONJUNCTION, SPACE, adverb3];
 
 adverb3 = ADVERB | adverb;
+
+
+
+endpunct = ENDPUNCT [{ENDPUNCT, ENDPUNCT}];
 
 
 
