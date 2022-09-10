@@ -50,7 +50,7 @@ pluralclause = ([pluralnoun1, SPACE], pluraldependentclause | pluralnoun, SPACE,
 
 
 
-question = question1, [pluralverb, [SPACE, gnoun]];
+question = question1, [infinitive, [SPACE, gnoun]];
 
 question1 = SHELPVERB, SPACE, singularnoun | PHELPVERB, SPACE, pluralnoun;
 
@@ -163,6 +163,10 @@ adjective1 = adjective2 | adjective1, [", ", {adjective1, ", "}] CONJUNCTION, SP
 adjective2 = adjective3 | "(", adjective3, ")";
 
 adjective3 = gnoun | [adverb, SPACE], (ADJECTIVE | {DIGIT});
+
+
+
+infinitive = [adverb, SPACE] INFINITIVE;
 
 
 
