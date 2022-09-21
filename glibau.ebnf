@@ -28,7 +28,7 @@ quantifier = PUQUANTIFIER, SPACE, gnoun, [SPACE, VARIABLE] ",";
 
 
 
-introductory = [namelist, ":", SPACE], [CONJUNCTION, SPACE], [{introporw}, SPACE], [CONJUNCTION, SPACE];
+introductory = [namelist, ":", SPACE], [CONJUNCTION, SPACE], {introporw, SPACE}, [CONJUNCTION, SPACE];
 
 
 
