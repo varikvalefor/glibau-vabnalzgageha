@@ -98,7 +98,7 @@ singularnoun1 = singularnoun2 | "(", singularnoun2, ")";
 
 singularnoun2 = singularnoun3 | "(", singularnoun3, ")", [SPACE, (singularrelativeclause | prepositionalphrase)];
 
-singularnoun3 = (clause | singularnoun4), SPACE, [SPACE, (singularrelativeclause | prepositionalphrase)];
+singularnoun3 = (clause | singularnoun4 | infinitivephrase), SPACE, [SPACE, (singularrelativeclause | prepositionalphrase)];
 
 singularnoun4 = ARTICLE, SPACE, adjective | [ARTICLE, SPACE] [adjective, SPACE] (SQUOTE | SNOUN | NAME | {DIGIT});
 
@@ -177,6 +177,10 @@ adverb2 = adverb2, SPACE, prepositionalphrase | (adverb2 | prepositionalphrase);
 adverb3 = adverb3, [[",", {SPACE, adverb3, ","}], SPACE, CONJUNCTION, SPACE, adverb3];
 
 adverb3 = ADVERB | adverb;
+
+
+
+infinitivephrase = "TO", SPACE, infinitive, [SPACE, gnoun], [SPACE, prepositionalphrase];
 
 
 
