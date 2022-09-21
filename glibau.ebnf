@@ -1,4 +1,6 @@
-text = [{supersentence, {ENDPUNCT}, INTERSENTENCESPACE}] supersentence, {ENDPUNCT};
+text = [{text1, INTERSENTENCESPACE}] text1;
+
+text1 = supersentence, {ENDPUNCT} | EMOTICON;
 
 
 
