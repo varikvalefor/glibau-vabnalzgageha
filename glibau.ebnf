@@ -144,7 +144,9 @@ gerund = GERUNDWORD, [SPACE, gnoun];
 
 
 
-prepositionalphrase = PREPOSITION, SPACE, gnoun, [SPACE, CONJUNCTION, SPACE, prepositionalphrase];
+prepositionalphrase = prepositionalphrase1 | "(", prepositionalphrase1, ")";
+
+prepositionalphrase1 = PREPOSITION, SPACE, gnoun, [SPACE, CONJUNCTION, SPACE, prepositionalphrase1];
 
 
 
