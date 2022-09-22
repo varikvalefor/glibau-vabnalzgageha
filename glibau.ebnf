@@ -98,11 +98,13 @@ singularnoun = singularnoun [[", ", {singularnoun, ", "}, SPACE], CONJUNCTION, S
 
 singularnoun1 = singularnoun2 | "(", singularnoun2, ")";
 
-singularnoun2 = singularnoun3 | "(", singularnoun3, ")", [SPACE, (singularrelativeclause | prepositionalphrase)];
+singularnoun2 = (singularnoun3 | "(", singularnoun3, ")") [eggphrase];
 
-singularnoun3 = (clause | singularnoun4 | infinitivephrase), SPACE, [SPACE, (singularrelativeclause | prepositionalphrase)];
+singularnoun3 = singularnoun4 | "(", singularnoun4, ")", [SPACE, (singularrelativeclause | prepositionalphrase)];
 
-singularnoun4 = ARTICLE, SPACE, adjective | [ARTICLE, SPACE] [adjective, SPACE] (SQUOTE | SNOUN | NAME | {DIGIT});
+singularnoun4 = (clause | singularnoun5 | infinitivephrase), SPACE, [SPACE, (singularrelativeclause | prepositionalphrase)];
+
+singularnoun5 = ARTICLE, SPACE, adjective | [ARTICLE, SPACE] [adjective, SPACE] (SQUOTE | SNOUN | NAME | {DIGIT});
 
 
 
@@ -110,11 +112,13 @@ pluralnoun = pluralnoun1, [[", ", {pluralnoun1, ", "}, SPACE], CONJUNCTION, SPAC
 
 pluralnoun1 = pluralnoun2 | "(", pluralnoun2, ")";
 
-pluralnoun2 = (pluralnoun3 | "(", pluralnoun3, ")"), [SPACE, (pluralrelativeclause | prepositionalphrase)];
+pluralnoun2 = (pluralnoun3 | "(", pluralnoun3, ")") [eggphrase];
 
-pluralnoun3 = [{DIGIT}, SPACE], (clause | pluralnoun4), [SPACE, (pluralrelativeclause | prepositionalphrase)];
+pluralnoun3 = (pluralnoun4 | "(", pluralnoun4, ")"), [SPACE, (pluralrelativeclause | prepositionalphrase)];
 
-pluralnoun4 = ARTICLE, SPACE, adjective | [ARTICLE, SPACE] [adjective, SPACE], (PQUOTE | PNOUN | {DIGIT});
+pluralnoun4 = [{DIGIT}, SPACE], (clause | pluralnoun5), [SPACE, (pluralrelativeclause | prepositionalphrase)];
+
+pluralnoun5 = ARTICLE, SPACE, adjective | [ARTICLE, SPACE] [adjective, SPACE], (PQUOTE | PNOUN | {DIGIT});
 
 
 
@@ -185,6 +189,10 @@ adverb3 = ADVERB | adverb;
 
 
 infinitivephrase = "TO", SPACE, infinitive, [SPACE, gnoun], [SPACE, prepositionalphrase];
+
+
+
+eggphrase = EG, ",", SPACE, gnoun, ",";
 
 
 
