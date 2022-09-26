@@ -162,7 +162,9 @@ introporw = (INTERJECTION | prepositionalphrase | gerund), ",";
 
 
 
-clause = CLAUSEOPENER, SPACE, supersentence | "(", supersentence, ")";
+clause = clause1 | "(", clause1, ")";
+
+clause1 = CLAUSEOPENER, SPACE, supersentence;
 
 
 
