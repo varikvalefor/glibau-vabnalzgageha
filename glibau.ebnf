@@ -146,7 +146,9 @@ singularrelativeclause1 = RELCLAUSEOPENER, SPACE, singulardependentclause;
 
 
 
-gerund = GERUNDWORD, [SPACE, gnoun];
+gerund = gerund1 | "(", gerund1, ")";
+
+gerund1 = GERUNDWORD, [SPACE, gnoun];
 
 
 
