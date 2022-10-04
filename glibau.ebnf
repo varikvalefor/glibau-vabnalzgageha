@@ -38,12 +38,6 @@ noncompoundsentence = clause | INTERJECTION;
 
 
 
-clause = clause1 | "(", clause1, ")";
-
-clause1 = pluralclause | singularclause | question;
-
-
-
 singularclause = ([singularnoun], SPACE, singulardependentclause | singularnoun, SPACE, singularlinkingverb0, [SPACE, adverb], [SPACE, adjective]);
 
 
