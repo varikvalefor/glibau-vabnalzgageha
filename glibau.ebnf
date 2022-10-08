@@ -15,7 +15,7 @@ conditional = conditional1 | "(", conditional1, ")";
 
 conditional1 = conditional2 | conditional3;
 
-conditional2 = conditional4, SPACE, LOGICONJUNCTION , SPACE, conditional4;
+conditional2 = conditional4, SPACE, LOGICONJUNCTION, SPACE, conditional4;
 
 conditional3 = LOGICONJUNCTION, SPACE, conditional4, ", ", THEN, conditional4;
 
@@ -38,6 +38,12 @@ introductory = [namelist, ":", SPACE], [CONJUNCTION, SPACE], {introporw, SPACE},
 
 
 noncompoundsentence = clause | INTERJECTION;
+
+
+
+clause = clause1 | "(", clause1, ")";
+
+clause1 = pluralclause | singularclause | question;
 
 
 
@@ -99,7 +105,7 @@ singularnoun2 = (singularnoun3 | "(", singularnoun3, ")") [eggphrase];
 
 singularnoun3 = singularnoun4 | "(", singularnoun4, ")", [SPACE, (singularrelativeclause | prepositionalphrase)];
 
-singularnoun4 = (clause | singularnoun5 | infinitivephrase), SPACE, [SPACE, (singularrelativeclause | prepositionalphrase)];
+singularnoun4 = (clausen | singularnoun5 | infinitivephrase), SPACE, [SPACE, (singularrelativeclause | prepositionalphrase)];
 
 singularnoun5 = ARTICLE, SPACE, adjective | [ARTICLE, SPACE] [adjective, SPACE] (SQUOTE | SNOUN | NAME | {DIGIT});
 
@@ -113,7 +119,7 @@ pluralnoun2 = (pluralnoun3 | "(", pluralnoun3, ")") [eggphrase];
 
 pluralnoun3 = (pluralnoun4 | "(", pluralnoun4, ")"), [SPACE, (pluralrelativeclause | prepositionalphrase)];
 
-pluralnoun4 = [{DIGIT}, SPACE], (clause | pluralnoun5), [SPACE, (pluralrelativeclause | prepositionalphrase)];
+pluralnoun4 = [{DIGIT}, SPACE], pluralnoun5, [SPACE, (pluralrelativeclause | prepositionalphrase)];
 
 pluralnoun5 = ARTICLE, SPACE, adjective | [ARTICLE, SPACE] [adjective, SPACE], (PQUOTE | PNOUN | {DIGIT});
 
@@ -159,9 +165,9 @@ introporw = (INTERJECTION | prepositionalphrase | gerund), ",";
 
 
 
-clause = clause1 | "(", clause1, ")";
+clausen = clause1 | "(", clause1, ")";
 
-clause1 = CLAUSEOPENER, SPACE, supersentence;
+clausen1 = CLAUSEOPENER, SPACE, supersentence;
 
 
 
