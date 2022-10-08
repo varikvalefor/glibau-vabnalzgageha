@@ -107,7 +107,7 @@ singularnoun3 = singularnoun4 | "(", singularnoun4, ")", [SPACE, (singularrelati
 
 singularnoun4 = (clausen | singularnoun5 | infinitivephrase), SPACE, [SPACE, (singularrelativeclause | prepositionalphrase)];
 
-singularnoun5 = ARTICLE, SPACE, adjective | [ARTICLE, SPACE] [adjective, SPACE] (SQUOTE | SNOUN | NAME | {DIGIT});
+singularnoun5 = ARTICLE, SPACE, adjective | [ARTICLE, SPACE] [adjective, SPACE] (SQUOTE | SNOUN | NAME | number);
 
 
 
@@ -119,9 +119,9 @@ pluralnoun2 = (pluralnoun3 | "(", pluralnoun3, ")") [eggphrase];
 
 pluralnoun3 = (pluralnoun4 | "(", pluralnoun4, ")"), [SPACE, (pluralrelativeclause | prepositionalphrase)];
 
-pluralnoun4 = [{DIGIT}, SPACE], pluralnoun5, [SPACE, (pluralrelativeclause | prepositionalphrase)];
+pluralnoun4 = [number, SPACE], pluralnoun5, [SPACE, (pluralrelativeclause | prepositionalphrase)];
 
-pluralnoun5 = ARTICLE, SPACE, adjective | [ARTICLE, SPACE] [adjective, SPACE], (PQUOTE | PNOUN | {DIGIT});
+pluralnoun5 = ARTICLE, SPACE, adjective | [ARTICLE, SPACE] [adjective, SPACE], (PQUOTE | PNOUN | number);
 
 
 
@@ -177,7 +177,7 @@ adjective1 = adjective2 | adjective1, [", ", {adjective1, ", "}] CONJUNCTION, SP
 
 adjective2 = adjective3 | "(", adjective3, ")";
 
-adjective3 = gnoun | [adverb, SPACE], (ADJECTIVE | {DIGIT});
+adjective3 = gnoun | [adverb, SPACE], (ADJECTIVE | number);
 
 
 
@@ -200,6 +200,10 @@ infinitivephrase = "TO", SPACE, infinitive, [SPACE, gnoun], [SPACE, prepositiona
 
 
 eggphrase = EG, ",", SPACE, gnoun, ",";
+
+
+
+number = {DIGIT} [".", {DIGIT}] | latexpression;
 
 
 
