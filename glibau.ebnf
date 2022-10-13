@@ -189,9 +189,9 @@ adverb = adverb1 | "(", adverb1, ")";
 
 adverb2 = adverb2, SPACE, prepositionalphrase | (adverb2 | prepositionalphrase);
 
-adverb3 = adverb3, [[",", {SPACE, adverb3, ","}], SPACE, CONJUNCTION, SPACE, adverb3];
+adverb3 = adverb4, [[",", {SPACE, adverb4, ","}], SPACE, CONJUNCTION, SPACE, adverb4];
 
-adverb3 = ADVERB | adverb;
+adverb4 = ADVERB | adverb;
 
 
 
